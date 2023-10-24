@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Survey</title>
+</head>
+<body>
+<h1>User Survey</h1>
+
+<form action="javascript:submitForm()">
+<input type="text" id="name" placeholder="Enter your name">
+<br>
+<input type="number" id="q1" placeholder="How good are you feeling today? (1-5)">
+<br>
+<input type="number" id="q2" placeholder="Rate your expectation for today? (1-5)">
+<br>
+<input type="number" id="q3" placeholder="Are you okay? (1-5)">
+<br>
+<button type="submit">Submit</button>
+</form>
+
+<script>
+// Create a Java array to store the user answers
+var answers = [];
+
+// Function to submit the form and store the user answers in the Java array
+function submitForm() {
+  // Get the user's name
+  var name = document.getElementById("name").value;
+
+  // Get the user's answers to the questions
+  var q1 = document.getElementById("q1").value;
+  var q2 = document.getElementById("q2").value;
+  var q3 = document.getElementById("q3").value;
+
+  // Store the user's answers in the Java array
+  answers = [name, q1, q2, q3];
+
+  // Update the HTML to display the user's answers
+  document.getElementById("answers").innerHTML = "Your answers are: " + answers;
+}
+</script>
+
+<div id="answers"></div>
+</body>
+</html>
